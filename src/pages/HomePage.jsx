@@ -77,7 +77,7 @@ const HomePage = () => {
         const user = JSON.parse(localStorage.getItem("user"));
         setLoading(true);
         const res = await axios.post(
-          "http://localhost:8080/api/v1/transactions/get-transaction",
+          "https://expense-tracker-backend-q2vb.onrender.com/api/v1/transactions/get-transaction",
           { userid: user._id, frequency, selectedDate, type }
         );
         setLoading(false);
@@ -96,7 +96,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       await axios.post(
-        "http://localhost:8080/api/v1/transactions/delete-transaction",
+        "https://expense-tracker-backend-q2vb.onrender.com/api/v1/transactions/delete-transaction",
         {
           transactionId: record._id,
         }
@@ -118,7 +118,7 @@ const HomePage = () => {
       setLoading(true);
       if (editable) {
         await axios.post(
-          "http://localhost:8080/api/v1/transactions/edit-transaction",
+          "https://expense-tracker-backend-q2vb.onrender.com/api/v1/transactions/edit-transaction",
           {
             payload: { ...value, userid: user._id },
             transactionId: editable._id,
@@ -129,7 +129,7 @@ const HomePage = () => {
         message.success("Transaction Edited Successfully");
       } else {
         await axios.post(
-          "http://localhost:8080/api/v1/transactions/add-transaction",
+          "https://expense-tracker-backend-q2vb.onrender.com/api/v1/transactions/add-transaction",
           {
             ...value,
             userid: user._id,

@@ -12,7 +12,7 @@ const Login = () => {
     try {
       setLaoding(true);
       const { data } = await axios.post(
-        "http://localhost:8080/api/v1/users/login",
+        "https://expense-tracker-backend-q2vb.onrender.com/api/v1/users/login",
         values
       );
       setLaoding(false);

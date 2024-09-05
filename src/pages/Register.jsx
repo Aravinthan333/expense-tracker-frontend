@@ -10,7 +10,10 @@ const Register = () => {
   const submitHandler = async (values) => {
     try {
       setLaoding(true);
-      await axios.post("http://localhost:8080/api/v1/users/register", values);
+      await axios.post(
+        "https://expense-tracker-backend-q2vb.onrender.com/api/v1/users/register",
+        values
+      );
       message.success("Registration Successful");
       setLaoding(false);
       navigate("/login");
